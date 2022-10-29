@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from './components/Header'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const items = [
+        {id: 1, title : "Kesatu"},
+        {id: 2, title : "Kedua"},
+        {id: 3, title : "Ketiga"}
+    ]
+    const loading = false;
+
+    if (loading) return (<h1>Loading...</h1>)
+
+    return (
+        <>
+            <Header text="Feedback List"/>
+            <ul>
+                {items.map((item, index) => (
+                    <li key={index}>{item.title}</li>
+                ))}
+            </ul>
+        </>
+    )
 }
 
-export default App;
+export default App
