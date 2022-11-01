@@ -7,12 +7,18 @@ function App() {
         {id: 3, title : "Ketiga"}
     ]
     const loading = false;
-
+    const showSubHeader = true;
     if (loading) return (<h1>Loading...</h1>)
 
     return (
         <>
             <Header text="Feedback List"/>
+            {
+                (showSubHeader) && (
+                    <h2>List of items {items.length}</h2>
+                    
+                )
+            }
             <ul>
                 {items.map((item, index) => (
                     <li key={index}>{item.title}</li>
