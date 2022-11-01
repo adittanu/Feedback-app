@@ -12,7 +12,7 @@ function App() {
 
     return (
         <>
-            <Header  bgColor="gray" textColor="red"/>
+            <Header />
             {
                 (showSubHeader) && (
                     <h2>List of items {items.length}</h2>
