@@ -7,7 +7,9 @@ function App() {
     const [feedback, setFeedback] = useState(FeedbackData)
 
     const deleteFeedback = (id) => {
-        console.log(`this is your id : ${id}`)
+        setFeedback(feedback.filter((item) => {
+            return item.id !== id
+        }))
     }
 
     const loading = false;
