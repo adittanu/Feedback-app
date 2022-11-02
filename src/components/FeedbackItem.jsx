@@ -2,12 +2,7 @@ import Card from "./shared/Card"
 import PropTypes from "prop-types"
 import { FaTimes } from "react-icons/fa"
 
-function FeedbackItem({ item }) {
-
-    const handleDelete = (id) => { 
-        console.log("🚀 ~ file: FeedbackItem.jsx ~ line 8 ~ handleDelete ~ id", id)
-    }
-
+function FeedbackItem({ item, handleDelete }) {
     return (
         <Card reverse={false}>
             <div className="num-display">{item.rating}</div>
@@ -22,7 +17,8 @@ function FeedbackItem({ item }) {
 }
 
 FeedbackItem.propTypes = {
-    item : PropTypes.object.isRequired
+    item : PropTypes.object.isRequired,
+    handleDelete : PropTypes.func
 }
 
 export default FeedbackItem

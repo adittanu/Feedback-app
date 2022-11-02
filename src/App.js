@@ -6,6 +6,10 @@ import FeedbackData from './data/FeedbackData';
 function App() {
     const [feedback, setFeedback] = useState(FeedbackData)
 
+    const deleteFeedback = (id) => {
+        console.log(`this is your id : ${id}`)
+    }
+
     const loading = false;
     if (loading) return (<h1>Loading...</h1>)
 
@@ -13,7 +17,7 @@ function App() {
         <>
             <Header />  
             <div className="container">
-                <FeedbackItems feedback={feedback}/>
+                <FeedbackItems feedback={feedback} handleDelete={deleteFeedback}/>
             </div>
         </>
     )
