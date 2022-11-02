@@ -1,6 +1,5 @@
 import FeedbackItem from "./FeedbackItem"
 import PropTypes from "prop-types"
-import { Fa}
 
 function FeedbackItems({ feedback }) {
     if (!feedback || feedback.length === 0) {
