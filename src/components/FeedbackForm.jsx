@@ -14,7 +14,7 @@ function FeedbackForm() {
                 <h2>How you will rate your service with us?</h2>
                 <div className="input-group">
                     {/* Select component */}
-                    <input type="text" placeholder="Write a review" onChange={handleTextChange}/>
+                    <input type="text" placeholder="Write a review" onChange={handleTextChange} value={text}/>
                     <Button type="submit" version={'secondary'} isDisabled={true}>Send</Button>
                 </div>
             </form>
