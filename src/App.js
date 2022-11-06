@@ -4,6 +4,7 @@ import { useState } from 'react';
 import FeedbackData from './data/FeedbackData';
 import FeedbackStats from './components/FeedbackStats';
 import FeedbackForm from './components/FeedbackForm';
+import {v4 as uuidv4} from 'uuid'
 
 function App() {
     const [feedback, setFeedback] = useState(FeedbackData)
@@ -14,6 +15,11 @@ function App() {
         }
     }
 
+    const handleAdd = (newFeedback) => { 
+        newFeedback.id = uuidv4()
+        setFeedback([newFeedback, ...feedback])
+    }
+
     const loading = false;
     if (loading) return (<h1>Loading...</h1>)
 
@@ -21,7 +27,7 @@ function App() {
         <>
             <Header />  
             <div className="container">
-                <FeedbackForm/>
+                <FeedbackForm handleAdd={handleAdd}/>
                 <FeedbackStats feedback={feedback}/>
                 <FeedbackItems feedback={feedback} handleDelete={deleteFeedback}/>
             </div>

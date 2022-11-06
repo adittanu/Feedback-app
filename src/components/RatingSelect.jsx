@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import { useState } from 'react'
 
 function RatingSelect({ select }) {
-    const [selected, setSelected] = useState(5)
+    const [selected, setSelected] = useState(10)
     const handleChange = (e) => {
         let value = +e.currentTarget.value;
         // console.log("🚀 ~ file: RatingSelect.jsx ~ line 8 ~ handleChange ~ value", typeof parseFloat(value))
@@ -32,6 +32,26 @@ function RatingSelect({ select }) {
                 <li>
                     <input type="radio" name="rating" id="num5" onChange={handleChange} checked={selected===5} value={5} />
                     <label htmlFor="num5">5</label>
+                </li>
+                <li>
+                    <input type="radio" name="rating" id="num6" onChange={handleChange} checked={selected===6} value={6} />
+                    <label htmlFor="num6">6</label>
+                </li>
+                <li>
+                    <input type="radio" name="rating" id="num7" onChange={handleChange} checked={selected===7} value={7} />
+                    <label htmlFor="num7">7</label>
+                </li>
+                <li>
+                    <input type="radio" name="rating" id="num8" onChange={handleChange} checked={selected===8} value={8} />
+                    <label htmlFor="num8">8</label>
+                </li>
+                <li>
+                    <input type="radio" name="rating" id="num9" onChange={handleChange} checked={selected===9} value={9} />
+                    <label htmlFor="num9">9</label>
+                </li>
+                <li>
+                    <input type="radio" name="rating" id="num10" onChange={handleChange} checked={selected===10} value={10} />
+                    <label htmlFor="num10">10</label>
                 </li>
             </ul>
         </div>
