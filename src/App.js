@@ -1,4 +1,4 @@
-import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
+import {BrowserRouter as Router, Route, Routes, NavLink} from 'react-router-dom'
 import Header from './components/Header'
 import FeedbackList from './components/FeedbackList';
 import { useState } from 'react';
@@ -8,6 +8,8 @@ import FeedbackForm from './components/FeedbackForm';
 import {v4 as uuidv4} from 'uuid'
 import AboutPage from './components/pages/AboutPage';
 import AboutIconLink from './components/AboutIconLink';
+
+import Card from './components/shared/Card';
 
 function App() {
     const [feedback, setFeedback] = useState(FeedbackData)
@@ -42,6 +44,10 @@ function App() {
                         
                     <Route path='/About' element={<AboutPage/>}/>
                 </Routes>
+                <Card>
+                    <NavLink to="/" activeClassName="active">Home</NavLink>
+                    <NavLink to="/About" activeClassName="active">About</NavLink>
+                </Card>
             </div>
         </Router>
     )
