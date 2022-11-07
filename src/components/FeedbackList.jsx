@@ -6,7 +6,7 @@ import FeedbackContext from "../context/FeedbackContext"
 
 function FeedbackList({ handleDelete }) {
     const {feedback} = useContext(FeedbackContext)
-    console.log("🚀 ~ file: FeedbackList.jsx ~ line 9 ~ FeedbackList ~ feedback", feedback)
+    
     if (!feedback || feedback.length === 0) {
         return <div> No List Available</div>
     }
