@@ -8,8 +8,9 @@ import FeedbackForm from './components/FeedbackForm';
 import {v4 as uuidv4} from 'uuid'
 import AboutPage from './components/pages/AboutPage';
 import AboutIconLink from './components/AboutIconLink';
+import Post from './components/Post';
 
-import Card from './components/shared/Card';
+// import Card from './components/shared/Card';
 
 function App() {
     const [feedback, setFeedback] = useState(FeedbackData)
@@ -43,11 +44,12 @@ function App() {
                     } />
                         
                     <Route path='/About' element={<AboutPage/>}/>
+                    <Route path='/Post/:id/:name' element={<Post/>}/>
                 </Routes>
-                <Card>
+                {/* <Card>
                     <NavLink to="/" activeClassName="active">Home</NavLink>
                     <NavLink to="/About" activeClassName="active">About</NavLink>
-                </Card>
+                </Card> */}
             </div>
         </Router>
     )
