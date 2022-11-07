@@ -7,8 +7,10 @@ import FeedbackStats from './components/FeedbackStats';
 import FeedbackForm from './components/FeedbackForm';
 import {v4 as uuidv4} from 'uuid'
 import AboutPage from './components/pages/AboutPage';
+import NotFoundPage from './components/pages/NotFoundPage';
 import AboutIconLink from './components/AboutIconLink';
 import Post from './components/Post';
+
 
 // import Card from './components/shared/Card';
 
@@ -44,7 +46,8 @@ function App() {
                     } />
                         
                     <Route path='/About' element={<AboutPage/>}/>
-                    <Route path='/Post/:id/:name' element={<Post/>}/>
+                    <Route path='/Post' element={<Post/>}/>
+                    <Route path='/404' element={<NotFoundPage/>}/>
                 </Routes>
                 {/* <Card>
                     <NavLink to="/" activeClassName="active">Home</NavLink>

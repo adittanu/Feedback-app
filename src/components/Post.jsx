@@ -1,13 +1,21 @@
-import { useParams } from 'react-router-dom'
+import { Navigate, useNavigate } from 'react-router-dom'
 import Card from './shared/Card'
 
 function Post() {
-    const params = useParams()
+    const status = 200
+    const navigate = useNavigate()
+
+    const handleButtonHome = () => { 
+        navigate('/')
+    }
+    if (status === 404) {
+        return <Navigate to="/404" />
+    }
 
     return (
         <Card>
-            <h1>Post {params.id}</h1>
-            <p>Name : {params.name}</p>
+            <h1>Navigate to other location</h1>
+            <button className='btn btn-secondary' onClick={handleButtonHome}>Go To Home</button>
         </Card>
     )
 }
