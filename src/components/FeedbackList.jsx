@@ -1,8 +1,12 @@
 import FeedbackItem from "./FeedbackItem"
 import PropTypes from "prop-types"
 import { motion, AnimatePresence } from 'framer-motion'
+import { useContext } from 'react'
+import FeedbackContext from "../context/FeedbackContext"
 
-function FeedbackList({ feedback, handleDelete }) {
+function FeedbackList({ handleDelete }) {
+    const {feedback} = useContext(FeedbackContext)
+    console.log("🚀 ~ file: FeedbackList.jsx ~ line 9 ~ FeedbackList ~ feedback", feedback)
     if (!feedback || feedback.length === 0) {
         return <div> No List Available</div>
     }

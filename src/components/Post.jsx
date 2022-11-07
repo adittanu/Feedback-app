@@ -11,7 +11,7 @@ function Post() {
     if (status === 404) {
         return <Navigate to="/404" />
     }
-
+    
     return (
         <Card>
             <h1>Navigate to other location</h1>

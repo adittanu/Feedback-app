@@ -10,7 +10,7 @@ import AboutPage from './components/pages/AboutPage';
 import NotFoundPage from './components/pages/NotFoundPage';
 import AboutIconLink from './components/AboutIconLink';
 import Post from './components/Post';
-
+import {FeedbackProvider} from './context/FeedbackContext';
 
 // import Card from './components/shared/Card';
 
@@ -32,29 +32,31 @@ function App() {
     if (loading) return (<h1>Loading...</h1>)
 
     return (
-        <Router>
-            <Header />  
-            <div className="container">
-                <Routes>
-                    <Route exact path='/' element={
-                        <>
-                            <FeedbackForm handleAdd={handleAdd}/>
-                            <FeedbackStats feedback={feedback}/>
-                            <FeedbackList feedback={feedback} handleDelete={deleteFeedback}/>
-                            <AboutIconLink/>
-                        </>
-                    } />
-                        
-                    <Route path='/About' element={<AboutPage/>}/>
-                    <Route path='/Post/*' element={<Post/>}/>
-                    <Route path='/404' element={<NotFoundPage/>}/>
-                </Routes>
-                {/* <Card>
-                    <NavLink to="/" activeClassName="active">Home</NavLink>
-                    <NavLink to="/About" activeClassName="active">About</NavLink>
-                </Card> */}
-            </div>
-        </Router>
+        <FeedbackProvider>
+            <Router>
+                <Header />  
+                <div className="container">
+                    <Routes>
+                        <Route exact path='/' element={
+                            <>
+                                <FeedbackForm handleAdd={handleAdd}/>
+                                <FeedbackStats feedback={feedback}/>
+                                <FeedbackList feedback={feedback} handleDelete={deleteFeedback}/>
+                                <AboutIconLink/>
+                            </>
+                        } />
+                            
+                        <Route path='/About' element={<AboutPage/>}/>
+                        <Route path='/Post/*' element={<Post/>}/>
+                        <Route path='/404' element={<NotFoundPage/>}/>
+                    </Routes>
+                    {/* <Card>
+                        <NavLink to="/" activeClassName="active">Home</NavLink>
+                        <NavLink to="/About" activeClassName="active">About</NavLink>
+                    </Card> */}
+                </div>
+            </Router>
+        </FeedbackProvider>
     )
 }
 
