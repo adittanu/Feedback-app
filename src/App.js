@@ -46,7 +46,7 @@ function App() {
                     } />
                         
                     <Route path='/About' element={<AboutPage/>}/>
-                    <Route path='/Post' element={<Post/>}/>
+                    <Route path='/Post/*' element={<Post/>}/>
                     <Route path='/404' element={<NotFoundPage/>}/>
                 </Routes>
                 {/* <Card>

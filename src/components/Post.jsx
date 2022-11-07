@@ -1,4 +1,4 @@
-import { Navigate, useNavigate } from 'react-router-dom'
+import { Navigate, useNavigate, Routes, Route } from 'react-router-dom'
 import Card from './shared/Card'
 
 function Post() {
@@ -16,6 +16,11 @@ function Post() {
         <Card>
             <h1>Navigate to other location</h1>
             <button className='btn btn-secondary' onClick={handleButtonHome}>Go To Home</button>
+            <br />
+            <br />
+            <Routes>
+                <Route path="/show" element={<div><h1>Showing...</h1></div>}/>
+            </Routes>
         </Card>
     )
 }
