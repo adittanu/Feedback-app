@@ -8,7 +8,7 @@ export const FeedbackProvider = ({ children }) => {
     const [feedback, setFeedback] = useState(FeedbackData)
 
     // eslint-disable-next-line no-unused-vars
-    const [feedbackEdit, setFeedbackEdit] = useState({
+    const [feedbackTemp, setFeedbackTemp] = useState({
         item : {},
         isEdit : false
     })
@@ -28,7 +28,7 @@ export const FeedbackProvider = ({ children }) => {
 
     // * Move Feedback to edit
     const editFeedback = (item) => {
-        setFeedbackEdit({
+        setFeedbackTemp({
             item,
             isEdit : true
         })
@@ -40,7 +40,8 @@ export const FeedbackProvider = ({ children }) => {
                 feedback,
                 deleteFeedback,
                 addFeedback,
-                editFeedback
+                editFeedback,
+                feedbackTemp
             }}>
             {children}
         </FeedbackContext.Provider>

@@ -1,11 +1,16 @@
 import PropTypes from 'prop-types'
-import { useState } from 'react'
-
+import { useEffect, useState, useContext } from 'react'
+import FeedbackContext from '../context/FeedbackContext'
 function RatingSelect({ select }) {
     const [selected, setSelected] = useState(10)
+    const {feedbackTemp} = useContext(FeedbackContext)
+
+    useEffect(() => {
+        setSelected(feedbackTemp.item.rating)
+    }, [feedbackTemp])
+    
     const handleChange = (e) => {
         let value = +e.currentTarget.value;
-        // console.log("🚀 ~ file: RatingSelect.jsx ~ line 8 ~ handleChange ~ value", typeof parseFloat(value))
         setSelected(value)
         select(value)
     }   
